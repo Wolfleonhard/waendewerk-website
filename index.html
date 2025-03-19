@@ -18,7 +18,7 @@
         /* Navigation */
         header {
             background: rgba(255, 255, 255, 0.95);
-            padding: 5px 40px; /* Gleichmäßige Abstände */
+            padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -34,31 +34,80 @@
         .nav-container {
             display: flex;
             align-items: center;
+            gap: 50px;
+            max-width: 1200px;
+            width: 100%;
             justify-content: center;
-            flex-grow: 1;
-            gap: 40px; /* Gleicher Abstand zwischen den Elementen */
-        }
-
-        .nav-logo {
-            margin-right: auto; /* Gleicher Abstand wie zwischen den anderen Navigationselementen */
+            margin: 0 auto;
         }
 
         .nav-logo img {
-            height: 35px;
+            height: 50px;
             cursor: pointer;
             border-radius: 8px;
         }
 
         .nav-item {
-            font-size: 16px;
+            font-size: 18px;
             font-weight: bold;
             color: #333;
             cursor: pointer;
             transition: color 0.3s ease;
+            position: relative;
         }
 
         .nav-item:hover {
             color: #4A752C;
+        }
+
+        /* Dropdown-Menü */
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            min-width: 200px;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+
+        .nav-item:hover .dropdown,
+        .nav-item:focus-within .dropdown {
+            display: block;
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+
+        .dropdown a:hover {
+            background-color: #E8E8E8;
+        }
+
+        /* Mobile Navigation */
+        @media screen and (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .nav-item {
+                font-size: 16px;
+            }
         }
 
         /* Hero Section */
@@ -71,6 +120,7 @@
             justify-content: center;
             text-align: center;
             position: relative;
+            padding: 20px;
         }
 
         .hero::after {
@@ -92,12 +142,12 @@
         }
 
         .hero-text h1 {
-            font-size: 50px;
+            font-size: 40px;
             font-weight: bold;
         }
 
         .hero-text p {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 300;
         }
 
@@ -131,11 +181,26 @@
 <body>
 
 <header>
-    <a href="index.html" class="nav-logo"><img src="https://github.com/Wolfleonhard/waendewerk-website/blob/main/assets/Waendewerk%20gro%C3%9F%20schwarz.png?raw=true" alt="Waendewerk Logo"></a>
     <div class="nav-container">
-        <div class="nav-item">Projekte</div>
-        <div class="nav-item">Über uns</div>
-        <div class="nav-item">Kontakt</div>
+        <a href="index.html" class="nav-logo"><img src="https://github.com/Wolfleonhard/waendewerk-website/blob/main/assets/Waendewerk%20gro%C3%9F%20schwarz.png?raw=true" alt="Waendewerk Logo"></a>
+        <div class="nav-item">Projekte
+            <div class="dropdown">
+                <a href="#">Projekt 1</a>
+                <a href="#">Projekt 2</a>
+            </div>
+        </div>
+        <div class="nav-item">Über uns
+            <div class="dropdown">
+                <a href="#">Unser Team</a>
+                <a href="#">Unsere Vision</a>
+            </div>
+        </div>
+        <div class="nav-item">Kontakt
+            <div class="dropdown">
+                <a href="#">E-Mail</a>
+                <a href="#">Telefon</a>
+            </div>
+        </div>
     </div>
 </header>
 
@@ -148,7 +213,10 @@
 </div>
 
 <footer>
-    © 2025 Waendewerk - Alle Rechte vorbehalten | <a href="#">Impressum</a> | <a href="#">Datenschutz</a>
+    <div class="footer-text">© 2025 Waendewerk - Alle Rechte vorbehalten</div>
+    <div class="footer-links">
+        <a href="#" style="color: #4A752C;">Impressum</a> | <a href="#" style="color: #4A752C;">Datenschutz</a>
+    </div>
 </footer>
 
 </body>
