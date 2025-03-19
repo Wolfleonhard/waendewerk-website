@@ -18,7 +18,7 @@
         /* Navigation */
         header {
             background: rgba(255, 255, 255, 0.95);
-            padding: 15px 40px;
+            padding: 5px 40px; /* Gleichmäßige Abstände */
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -31,20 +31,26 @@
             backdrop-filter: blur(20px);
         }
 
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+            gap: 40px; /* Gleicher Abstand zwischen den Elementen */
+        }
+
+        .nav-logo {
+            margin-right: auto; /* Gleicher Abstand wie zwischen den anderen Navigationselementen */
+        }
+
         .nav-logo img {
-            height: 50px;
+            height: 35px;
             cursor: pointer;
             border-radius: 8px;
         }
 
-        .nav-container {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-        }
-
         .nav-item {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
             color: #333;
             cursor: pointer;
