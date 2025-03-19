@@ -10,7 +10,7 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(180deg, #FDFDFD, #ECECEC); /* Apple-ähnlicher Hochglanz-Effekt */
+            background: linear-gradient(180deg, #FDFDFD, #ECECEC);
             color: #1F1F1F;
             scroll-behavior: smooth;
         }
@@ -32,9 +32,9 @@
         }
 
         .nav-logo img {
-            height: 40px;
+            height: 50px;
             cursor: pointer;
-            border-radius: 8px; /* Abrundung der Ecken */
+            border-radius: 8px;
         }
 
         .nav-container {
@@ -44,8 +44,6 @@
         }
 
         .nav-item {
-            position: relative;
-            padding: 10px;
             font-size: 18px;
             font-weight: bold;
             color: #333;
@@ -54,83 +52,18 @@
         }
 
         .nav-item:hover {
-            color: #4A752C; /* Edler grüner Akzent */
+            color: #4A752C;
         }
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 40px;
-            left: 0;
-            background-color: white;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            min-width: 200px;
-            padding: 10px 0;
-            z-index: 1000;
-        }
-
-        .dropdown-content a {
-            display: block;
-            padding: 10px 20px;
-            text-decoration: none;
-            color: #333;
-            font-size: 16px;
-            transition: background 0.3s ease;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #E8E8E8;
-        }
-
-        .nav-item:hover .dropdown-content {
-            display: block;
-        }
-
-        /* Mobile Navigation (Burger Menü) */
-        .burger-menu {
-            display: none;
-            font-size: 30px;
-            cursor: pointer;
-        }
-
-        .mobile-nav {
-            display: none;
-            flex-direction: column;
-            background: white;
-            position: absolute;
-            top: 60px;
-            right: 0;
-            width: 60%;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.08);
-            text-align: right;
-            padding: 10px;
-        }
-
-        .mobile-nav a {
-            padding: 10px;
-            display: block;
-            text-decoration: none;
-            color: #333;
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .mobile-nav a:hover {
-            background: #E8E8E8;
-        }
-
-        /* Hero Section mit Apple-ähnlichem Textdesign */
+        /* Hero Section */
         .hero {
-            background: url('https://source.unsplash.com/1600x900/?modern,architecture,clean') no-repeat center;
+            background: url('https://source.unsplash.com/1600x900/?modern,architecture') no-repeat center;
             background-size: cover;
             height: 600px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 20px;
-            color: white;
             position: relative;
         }
 
@@ -141,8 +74,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(15px);
+            background: rgba(0, 0, 0, 0.4);
         }
 
         .hero-text {
@@ -150,28 +82,19 @@
             z-index: 1;
             text-align: center;
             max-width: 900px;
-            padding: 20px;
+            color: white;
         }
 
         .hero-text h1 {
             font-size: 50px;
             font-weight: bold;
-            margin-bottom: 10px;
-            color: #1F1F1F;
-            text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.7);
         }
 
         .hero-text p {
             font-size: 22px;
             font-weight: 300;
-            color: #333;
-            margin-top: 10px;
-            max-width: 80%;
-            margin-left: auto;
-            margin-right: auto;
         }
 
-        /* Button mit edlem grünen Akzent */
         .cta-button {
             display: inline-block;
             margin-top: 30px;
@@ -181,32 +104,12 @@
             text-decoration: none;
             font-size: 20px;
             border-radius: 30px;
-            font-weight: bold;
             transition: background 0.3s ease, transform 0.2s ease;
         }
 
         .cta-button:hover {
             background: #3A5E22;
             transform: scale(1.1);
-        }
-
-        /* Responsive Anpassungen für Smartphones */
-        @media (max-width: 768px) {
-            .nav-container {
-                display: none;
-            }
-
-            .burger-menu {
-                display: block;
-            }
-
-            .hero-text h1 {
-                font-size: 36px;
-            }
-
-            .hero-text p {
-                font-size: 18px;
-            }
         }
 
         /* Footer */
@@ -218,34 +121,17 @@
             margin-top: 50px;
         }
     </style>
-    <script>
-        function toggleMenu() {
-            var menu = document.getElementById("mobileMenu");
-            if (menu.style.display === "block") {
-                menu.style.display = "none";
-            } else {
-                menu.style.display = "flex";
-            }
-        }
-    </script>
 </head>
 <body>
 
 <header>
-    <a href="index.html" class="nav-logo"><img src="https://github.com/Wolfleonhard/waendewerk-website/blob/main/assets/Waendewerk%20groß%20schwarz.png?raw=true" alt="Waendewerk Logo"></a>
-    <div class="burger-menu" onclick="toggleMenu()">☰</div>
+    <a href="index.html" class="nav-logo"><img src="https://github.com/Wolfleonhard/waendewerk-website/blob/main/assets/Waendewerk%20gro%C3%9F%20schwarz.png?raw=true" alt="Waendewerk Logo"></a>
     <div class="nav-container">
         <div class="nav-item">Projekte</div>
         <div class="nav-item">Über uns</div>
         <div class="nav-item">Kontakt</div>
     </div>
 </header>
-
-<div id="mobileMenu" class="mobile-nav">
-    <a href="#">Projekte</a>
-    <a href="#">Über uns</a>
-    <a href="#">Kontakt</a>
-</div>
 
 <div class="hero">
     <div class="hero-text">
@@ -256,7 +142,7 @@
 </div>
 
 <footer>
-    © 2025 Waendewerk - Alle Rechte vorbehalten
+    © 2025 Waendewerk - Alle Rechte vorbehalten | <a href="#">Impressum</a> | <a href="#">Datenschutz</a>
 </footer>
 
 </body>
